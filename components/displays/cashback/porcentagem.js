@@ -1,9 +1,7 @@
-import TextField from "@material-ui/core/TextField";
+import { Typography } from "@material-ui/core";
 
-export default function PorcentagemDisplay() {
-    return <TextField 
-            label="Data" 
-            value="%"
-            aria-readonly
-            type="date" />
+export default function PorcentagemDisplay(valor) {
+    return (
+        <Typography>{valor}%</Typography>
+    );
 }

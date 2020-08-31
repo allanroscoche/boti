@@ -1,25 +1,25 @@
 import React, {useState} from 'react';
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import { Grid } from "@material-ui/core";
+import CodigoInput from "../../components/inputs/codigo";
+import ValorInput from "../../components/inputs/valor";
+import DataInput from "../../components/inputs/data";
+import ConfirmButton from '../../components/buttons/confirm';
 
 export default function Compras()
 {
-    const [codigo, setCodigo] = useState("");
-    const [senha, setSenha] = useState("");
     return (
-    <div>
-        <TextField 
-            id="codigo" 
-            label="Codigo" 
-            onBlur={ (e) => setEmail(e.target.value) }
-            />
-        <TextField 
-            id="senha" 
-            label="Senha" 
-            autoComplete="current-password"
-            type="password"/>
-        <Button variant="contained" color="primary">
-            Cadastrar
-        </Button>
-    </div>);
+    <Grid container spacing={2} direction="column" justify="center" alignItems="center">
+        <Grid item xs={4}>
+            <CodigoInput />
+        </Grid>
+        <Grid item xs={4}>
+            <ValorInput />
+        </Grid>
+        <Grid item xs={4}>
+            <DataInput />
+        </Grid>
+        <Grid item xs={4}>
+            <ConfirmButton url="/compras" >Cadastrar</ConfirmButton>
+        </Grid>
+    </Grid>);
 }

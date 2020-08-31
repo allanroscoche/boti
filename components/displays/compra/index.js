@@ -1,10 +1,11 @@
 import CodigoDisplay from "./codigo";
-import ValorDisplay from "./valor";
 import DataDisplay from "./data";
+import ValorCompraDisplay from "../compra/valor";
+import CashBackDisplay from "../cashback/index";
 import { Card, CardContent, Grid } from "@material-ui/core";
 
 export default function CompraDisplay({
-    compra: { codigo, valor, data }
+    compra: { codigo, valor, data, cashback }
     }) {
     return (
         <Card >
@@ -13,11 +14,14 @@ export default function CompraDisplay({
                     <Grid item xs={12} >
                         <CodigoDisplay codigo={codigo} />
                     </Grid>
-                    <Grid item xs={3} >
-                        <ValorDisplay valor={valor} />
+                    <Grid item xs={6} >
+                        <ValorCompraDisplay valor={valor} />
                     </Grid>
-                    <Grid item xs={3} >
+                    <Grid item xs={6} >
                         <DataDisplay data={data} />
+                    </Grid>
+                    <Grid item xs={6} >
+                        <CashBackDisplay cashback={cashback} valor={valor} />
                     </Grid>
                 </Grid>
             </CardContent>

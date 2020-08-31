@@ -1,9 +1,12 @@
-import Button from "@material-ui/core/Button";
+import { Button } from "@material-ui/core";
+import Link from "next/link";
 
 export default function ConfirmButton(props) {
     return (
-        <Button variant="contained" color="primary">
-            {props.children}
-        </Button>
-    );
+        <Link href={props.url} >
+            <Button variant="contained" color="primary">
+                {props.children}
+            </Button>
+        </Link>
+        );
 }

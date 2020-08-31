@@ -1,9 +1,7 @@
-import TextField from "@material-ui/core/TextField";
+import { Typography } from "@material-ui/core";
 
-export default function ValorDisplay({valor}) {
-    return <TextField 
-            label="Valor" 
-            defaultValue={valor}
-            InputProps={{ readOnly=true }}
-            type="text" />
+export default function CashBackValorDisplay({valor}) {
+    return (
+        <Typography>R$ {valor}</Typography>
+    );
 }

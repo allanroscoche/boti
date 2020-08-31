@@ -1,7 +1,8 @@
+import ValorDisplay from "../cashback/valor";
 import { Typography } from "@material-ui/core";
 
-export default function ValorDisplay({valor}) {
+export default function ValorCompraDisplay({valor}) {
     return (
-        <Typography>R$ {valor}</Typography>
-    ) 
+        <Typography>Valor: R${valor}</Typography>
+    );
 }
