@@ -1,8 +1,25 @@
-import React, {useState} from 'react';
-import { Grid, Container } from "@material-ui/core";
+import React, { useState, useEffect } from 'react';
+import { Grid, Typography } from "@material-ui/core";
+import Axios from 'axios';
 
-export default function Login()
+export default function CashBack()
 {
+    const [cashback, setCashback] = useState(0);
+    const [error, setError] = useState(false);
+
+    useEffect( () => {
+        async function fetchCashback() {
+            try {
+                let resp = await Axios.get('/api/cashback');
+                setCashback(resp.data.valor);
+            } catch(e) {
+                setError(true);
+            }
+        }
+        fetchCashback();
+        
+    }, [])
+
     return (
         <Grid 
             container 
@@ -11,7 +28,9 @@ export default function Login()
             spacing={2} 
             direction="column">
             <Grid item xs={8}>
-                Total CashBack: R$ 1231.12
+                <Typography>
+                    Total CashBack: R$ {cashback} 
+                </Typography>
             </Grid>
         </Grid >
     );

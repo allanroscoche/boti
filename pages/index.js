@@ -7,6 +7,7 @@ export default function Home()
 	const routes = [
 		{ url:"/login", title: "Login" },
 		{ url:"/compras", title: "Compras" },
+		{ url:"/cashback", title: "Cashback" },
 		{ url:"/revendedor", title: "Revendedor" }
 	];
 	return (

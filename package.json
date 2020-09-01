@@ -21,6 +21,7 @@
   "homepage": "https://github.com/allanroscoche/boti#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "axios": "^0.20.0",
     "cpf-cnpj-validator": "^1.0.2",
     "next": "^9.5.2",
     "react": "^16.13.1",
