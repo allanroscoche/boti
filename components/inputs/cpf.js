@@ -1,6 +1,5 @@
 import { FormControl, InputLabel, Input } from "@material-ui/core";
 import { useState } from "react";
-import MaskedInput from "react-text-mask";
 import { cpf } from "cpf-cnpj-validator";
 
 export default function CpfInput() {
@@ -14,15 +13,12 @@ export default function CpfInput() {
         if(size < 12) {
             setCpf(cpf);
             if(size > 10) {
-                validate();
+                validate(cpf);
             }
         } 
     }
-    const format = (value) => {
-        return value;
-    }
-    const validate = (e) => {
-        setError(!cpf.isValid(cpfState));
+    const validate = (cpfInput) => {
+        setError(!cpf.isValid(cpfInput));
     }
 
     return (
@@ -30,9 +26,9 @@ export default function CpfInput() {
             <InputLabel htmlFor="cpf-input">Cpf</InputLabel>
             <Input
             onChange={handleChange}
-            onBlur={validate}
+            onBlur={() => validate(cpfState)}
             name="cpf"
-            value={format(cpfState)}
+            value={cpfState}
             error={error}
             id="cpf-input"
             />
