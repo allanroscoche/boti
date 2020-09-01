@@ -13,17 +13,17 @@ export default function Revendedor()
                 <Grid item xs={12}>
                     <NomeInput />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={8}>
                     <CpfInput />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={8}>
                     <EmailInput />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={8}>
                     <SenhaInput />
                 </Grid>
                 <Grid item xs={12}>
-                    <ConfirmButton>Cadastrar</ConfirmButton>
+                    <ConfirmButton url="/login">Cadastrar</ConfirmButton>
                 </Grid>
             </Grid>
         </Container>

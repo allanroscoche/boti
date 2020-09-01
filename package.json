@@ -21,8 +21,14 @@
   "homepage": "https://github.com/allanroscoche/boti#readme",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "cpf-cnpj-validator": "^1.0.2",
     "next": "^9.5.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-number-format": "^4.4.1",
+    "react-text-mask": "^5.4.3"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
   }
 }
